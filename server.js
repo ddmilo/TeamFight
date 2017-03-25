@@ -4,11 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+var hbs = require('hbs');
+// var mongodb = require('mongodb');
 
-var index = require('./routes/index');
-var users = require('./routes/users');
+var indexController = require('./controllers/indexController');
+var usersController = require('./controllers/usersController');
 
 var app = express();
+
+var db = mongoose.connection;
+mongoose.connect('mongodb://localhost/TeamFight');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -22,8 +28,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
-app.use('/users', users);
+app.use('/', indexController);
+app.use('/users', usersController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
@@ -41,6 +47,15 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+db.once('open', function() {
+  console.log("database has been connected!");
+});
+
+
+app.listen(4000, function(){
+  console.log('Mic Check');
 });
 
 module.exports = app;
