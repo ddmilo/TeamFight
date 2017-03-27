@@ -4,6 +4,8 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 var UserSchema = new Schema ({
+  first_name: String,
+  last_name: String,
   summoner_name: String,
   email: String,
   username: String,

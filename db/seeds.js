@@ -15,6 +15,7 @@ User.remove({}, function(err){
 
 // create new users
 var dan = new User({
+  first_name: 'Dan',
   summoner_name: 'Komix',
   email: 'ddmilo1029@gmail.com',
   username: 'Komix'

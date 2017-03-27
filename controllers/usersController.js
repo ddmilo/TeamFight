@@ -7,7 +7,7 @@ router.get('/', function(req, res) {
   User.find({})
   .exec(function(err, users){
     if (err) { console.log(err); }
-    res.render('show', { users: users });
+    res.render('users/show', { users: users });
   });
 });
 
