@@ -1,13 +1,26 @@
-<form action="/users/{{users.id}}?_method=PUT" method="PUT">
+<h2>Edit Account Information</h2>
+
+<form action="/users/{{users.id}}?_method=PATCH" method="PATCH">
 	<div>
 		<label for="first_name">First Name: </label>
 		<input type="text" name="name" value="{{users.first_name}}">
 	</div>
   <br>
 	<div>
+		<label for="last_name">Last Name: </label>
+		<input type="text" name="last_name" value="{{users.last_name}}">
+	</div>
+	<br>
+	<div>
 		<label for="email">Email: </label>
 		<input type="text" name="email" value="{{users.email}}">
 	</div>
+	<br>
+	<div>
+		<label for="summoner_name">Summoner Name: </label>
+		<input type="text" name="summoner_name" value="{{users.summoner_name}}">
+	</div>
+	<br>
 	<div>
 		<input type="submit" value="Update Account">
 	</div>

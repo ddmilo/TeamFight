@@ -12,6 +12,11 @@ router.get('/', function(req, res) {
   });
 });
 
+//render the register page
+router.get('/signup', function(req, res){
+  res.render('users/signup');
+});
+
 //User Show route
 router.get("/:id", function(req, res) {
   User.findById(req.params.id)
@@ -22,6 +27,43 @@ router.get("/:id", function(req, res) {
       });
     });
 });
+
+//Edit User
+router.get("/:id/edit", function(req, res) {
+	User.findById(req.params.id)
+		.exec(function(err, user) {
+			if (err) { console.log(err); }
+			res.render("users/edit", {
+				users: user
+
+			});
+		});
+});
+// ======================
+// UPDATE
+// ======================
+// create a PUT "/:id" route that saves the changes from the list.
+// update User
+router.patch('/:id', function(req, res) {
+   User.findByIdAndUpdate(req.params.id, {
+       first_name: req.body.first_name,
+       last_name: req.body.last_name
+      //  town: req.body.town,
+      //  state: req.body.state,
+      //  rate: req.body.rate,
+      //  description: req.body.description,
+      //  length: req.body.length
+   }, {new: true})
+       .exec(function(err, user) {
+           if (err) { console.log(err); }
+           console.log(users);
+           // res.send(hike);
+           res.render('/users', {
+               users: user
+           });
+       });
+});
+
 
 //CREATE User registration & Auth stuff
 
@@ -42,37 +84,11 @@ router.post('/', authHelpers.createSecure, function(req, res){
   });
 });
 
-//Edit User
-router.get("/:id/edit", function(req, res) {
-	User.findById(req.params.id)
-		.exec(function(err, user) {
-			if (err) { console.log(err); }
-			res.render("users/edit", {
-				users: user
-
-			});
-		});
-});
-
-//======================
-// UPDATE
-//======================
-//create a PUT "/:id" route that saves the changes from the list.
-//update User
-router.put('/:id', function(req, res){
-  User.findByIdAndUpdate(req.params.id, req.body, { new: true})
-  .exec(function(err, user){
-    if (err) { console.log(err); }
-    console.log(user);
-    res.redirect('/users')
-  });
-});
 
 
-//render the register page
-router.get('/register', function(req, res){
-  res.render('users/register');
-});
+
+
+
 
 
 

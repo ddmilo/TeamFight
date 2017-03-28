@@ -5,7 +5,7 @@ var authHelpers = require('../helpers/auth.js');
 
 //LOGIN
 router.get('/login', function(req, res) {
-  res.render('users/login');
+  res.render('users/login.hbs');
 });
 
 router.post('/login', authHelpers.loginUser, function(req, res){

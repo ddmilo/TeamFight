@@ -3,7 +3,7 @@ mongoose.connect('mongodb://localhost/TeamFight');
 
 
 var User = require('../models/user');
-var Post = require('../models/post')
+// var Post = require('../models/post')
 mongoose.Promise = global.Promise;
 
 
@@ -13,11 +13,11 @@ User.remove({}, function(err){
   console.log(err);
 });
 
-var test = new Post({
-  game: 'Overwatch',
-  Description: 'this is a test'
-
-});
+// var test = new Post({
+//   game: 'Overwatch',
+//   Description: 'this is a test'
+//
+// });
 // create new users
 // var dan = new User({
 //   first_name: 'Dan',
@@ -36,8 +36,8 @@ var test = new Post({
 //   console.log('User created!');
 // });
 
-test.save(function(err) {
-  if(err) console.log(err);
-
-  console.log('Post created!');
-});
+// test.save(function(err) {
+//   if(err) console.log(err);
+//
+//   console.log('Post created!');
+// });
