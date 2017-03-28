@@ -13,7 +13,7 @@ var hbs = require('hbs');
 var indexController = require('./controllers/indexController');
 var usersController = require('./controllers/usersController');
 var sessionsController = require('./controllers/sessions');
-var postController = require('./controllers/postController');
+// var postController = require('./controllers/postController');
 
 var app = express();
 
@@ -33,16 +33,16 @@ app.use(session({
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
+app.use(methodOverride('_method'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexController);
 app.use('/users', usersController);
 app.use('/sessions', sessionsController);
-app.use('/posts', postController);
+// app.use('/posts', postController);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
