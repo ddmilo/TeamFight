@@ -18,6 +18,7 @@ var UserSchema = new Schema ({
   first_name: String,
   last_name: String,
   summoner_name: String,
+  posts: [PostSchema],
   email: String,
   username: String,
   password_digest: String,
