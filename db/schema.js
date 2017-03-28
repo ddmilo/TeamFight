@@ -4,13 +4,13 @@ var Schema = mongoose.Schema;
 mongoose.Promise = global.Promise;
 
 
-// var PostSchema = new Schema ({
-//   created_at: Date,
-//   game: String,
-//   updated_at: Date,
-//   description: String,
-//   full: Boolean
-// })
+var PostSchema = new Schema ({
+  created_at: Date,
+  game: String,
+  updated_at: Date,
+  description: String,
+  full: Boolean
+})
 
 
 var UserSchema = new Schema ({
@@ -26,13 +26,13 @@ var UserSchema = new Schema ({
 });
 
 
-// PostSchema.pre('save', function(next){
-//   now = new Date();
-//   this.updated_at = now;
-//
-//   if (!this.created) {this.created_at = now}
-//   next();
-// });
+PostSchema.pre('save', function(next){
+  now = new Date();
+  this.updated_at = now;
+
+  if (!this.created) {this.created_at = now}
+  next();
+});
 
 
 UserSchema.pre('save', function(next){
@@ -45,10 +45,10 @@ UserSchema.pre('save', function(next){
 
 
 var UserModel = mongoose.model('User', UserSchema);
-// var PostModel = mongoose.model('Post', PostSchema);
+var PostModel = mongoose.model('Post', PostSchema);
 
 
 module.exports= {
   User: UserModel,
-  // Post: PostModel
+  Post: PostModel
 }
