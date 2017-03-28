@@ -3,7 +3,7 @@ var router = express.Router();
 var User = require('../models/user');
 var authHelpers = require('../helpers/auth.js')
 
-/* GET users listing. */
+//Index Route
 router.get('/', function(req, res) {
   User.find({})
   .exec(function(err, users){
@@ -12,7 +12,7 @@ router.get('/', function(req, res) {
   });
 });
 
-//SHOW: create a GET "/:id" route that shows the page ONLY IF it's the current user's session. Else, redirect to an error page that says "Oops! You are not authorized."
+//User Show route
 router.get("/:id", function(req, res) {
   User.findById(req.params.id)
     .exec(function(err, user) {
@@ -23,8 +23,8 @@ router.get("/:id", function(req, res) {
     });
 });
 
-//CREATE User registration
-//Auth stuff: POST "/" save username, email, and password
+//CREATE User registration & Auth stuff
+
 router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
@@ -59,7 +59,7 @@ router.get("/:id/edit", function(req, res) {
 //======================
 //create a PUT "/:id" route that saves the changes from the list.
 //update User
-router.patch('/:id', function(req, res){
+router.put('/:id', function(req, res){
   User.findByIdAndUpdate(req.params.id, req.body, { new: true})
   .exec(function(err, user){
     if (err) { console.log(err); }

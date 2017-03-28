@@ -2,11 +2,11 @@
 <h3> {{ users.username }} </h3>
 <ul>
 
- <li> Name: {{ users.first_name }} </li>
+ <li> Name: {{ users.first_name }} {{users.last_name}}</li>
  <li> Email: {{ users.email }} </li>
  <li> Summoner Name: {{ users.summoner_name}} </li>
 <br>
 
 </ul>
 
-<button><a href="/users/:id/edit">edit</a></button>
+<button><a href="/users/{{users.id}}/edit">edit</a></button>
