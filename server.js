@@ -12,6 +12,7 @@ var hbs = require('hbs');
 var indexController = require('./controllers/indexController');
 var usersController = require('./controllers/usersController');
 var sessionsController = require('./controllers/sessions');
+var postController = require('./controllers/postsController');
 
 var app = express();
 

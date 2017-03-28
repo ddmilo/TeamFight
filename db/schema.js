@@ -3,6 +3,7 @@ var Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 
+
 var PostSchema = new Schema ({
   created_at: Date,
   game_id: String,
