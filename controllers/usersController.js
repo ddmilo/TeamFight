@@ -12,6 +12,18 @@ router.get('/', function(req, res) {
   });
 });
 
+//create a GET "/:id/edit" route that renders the list's edit page
+router.get("/:id/edit", function(req, res) {
+	User.findById(req.params.id)
+		.exec(function(err, user) {
+			if (err) { console.log(err); }
+			res.render("users/edit", {
+				users: user,
+				user: req.params.userId
+			});
+		});
+});
+
 //render the register page
 router.get('/register', function(req, res){
   res.render('users/register');
