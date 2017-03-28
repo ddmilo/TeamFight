@@ -34,7 +34,9 @@ router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
     password_digest: res.hashedPassword,
-    username: req.body.username
+    username: req.body.username,
+    first_name: req.body.first_name,
+    last_name: req.body.last_name
   });
 
   user.save(function(err, user){

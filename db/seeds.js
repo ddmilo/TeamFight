@@ -14,19 +14,19 @@ User.remove({}, function(err){
 });
 
 // create new users
-var dan = new User({
-  first_name: 'Dan',
-  summoner_name: 'Komix',
-  email: 'ddmilo1029@gmail.com',
-  username: 'Komix',
-  password_digest: 'Arkahm29'
-
-});
-
-
-// save the users
-dan.save(function(err) {
-  if (err) console.log(err);
-
-  console.log('User created!');
-});
+// var dan = new User({
+//   first_name: 'Dan',
+//   summoner_name: 'Komix',
+//   email: 'ddmilo1029@gmail.com',
+//   username: 'Komix',
+//   password_digest: 'Arkahm29'
+//
+// });
+//
+//
+// // save the users
+// dan.save(function(err) {
+//   if (err) console.log(err);
+//
+//   console.log('User created!');
+// });
