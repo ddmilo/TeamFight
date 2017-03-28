@@ -28,21 +28,19 @@ router.get("/:id", function(req, res) {
     });
 });
 
-// User registration
-// Auth stuff: POST "/" save username, email, and password
-router.post('/', function(req, res){
+//User registration
+//Auth stuff: POST "/" save username, email, and password
+router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
-    password: res.hashedPassword,
-    username: req.body.username,
-    first_name: req.body.first_name,
-    last_name: req.body.last_name
+    password_digest: res.hashedPassword,
+    username: req.body.username
   });
 
   user.save(function(err, user){
     if (err) console.log(err);
     console.log(user);
-    // console.log(req.session.currentUser);
+    console.log(req.session.currentUser);
     res.redirect('/sessions/login');
   });
 });

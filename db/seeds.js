@@ -18,8 +18,9 @@ var dan = new User({
   first_name: 'Dan',
   summoner_name: 'Komix',
   email: 'ddmilo1029@gmail.com',
-  username: 'Komix'
-  
+  username: 'Komix',
+  password_digest: 'Arkahm29'
+
 });
 
 

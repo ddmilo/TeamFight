@@ -1,10 +1,10 @@
-
-
-
-<h1>{{users.username}}'s Summer Bucket List</h1>
+<h1>Account Overview</h1>
+<h3> {{ users.username }} </h3>
 <ul>
-	{{#each user}}
-		<li> Name: {{ summoner_name }} </li>
-		<br>
-	{{/each}}
+
+ <li> Name: {{ users.first_name }} </li>
+ <li> Email: {{ users.email }} </li>
+ <li> Summoner Name: {{ users.summoner_name}} </li>
+<br>
+
 </ul>

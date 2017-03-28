@@ -9,7 +9,7 @@ var UserSchema = new Schema ({
   summoner_name: String,
   email: String,
   username: String,
-  password: String,
+  password_digest: String,
   created_at: Date,
   updated_at: Date
 });
