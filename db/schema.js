@@ -45,6 +45,6 @@ var PostModel = mongoose.model('Post', PostSchema)
 
 
 module.exports= {
-  User: UserModel
+  User: UserModel,
   Post: PostModel
 }
