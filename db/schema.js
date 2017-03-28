@@ -6,8 +6,10 @@ mongoose.Promise = global.Promise;
 
 var PostSchema = new Schema ({
   created_at: Date,
-  game_id: String,
-  updated_at: Date
+  game: String,
+  updated_at: Date,
+  description: String,
+  full: Boolean
 })
 
 
@@ -42,7 +44,7 @@ UserSchema.pre('save', function(next){
 
 
 var UserModel = mongoose.model('User', UserSchema);
-var PostModel = mongoose.model('Post', PostSchema)
+var PostModel = mongoose.model('Post', PostSchema);
 
 
 module.exports= {
