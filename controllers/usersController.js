@@ -60,6 +60,17 @@ router.patch('/:id', function(req, res) {
        });
 });
 
+// USER DESTROY
+router.delete('/:id', function(req, res){
+  User.findByIdAndRemove(req.params.id)
+  .exec(function(err, user) {
+    if (err) console.log(err);
+    console.log('User deleted!');
+    // res.send("User deleted");
+    res.redirect('/');
+  });
+});
+
 
 //CREATE User registration & Auth stuff
 
