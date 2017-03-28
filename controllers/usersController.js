@@ -46,19 +46,15 @@ router.get("/:id/edit", function(req, res) {
 // update User
 router.patch('/:id', function(req, res) {
    User.findByIdAndUpdate(req.params.id, {
-       first_name: req.body.first_name,
-       last_name: req.body.last_name
-      //  town: req.body.town,
-      //  state: req.body.state,
-      //  rate: req.body.rate,
-      //  description: req.body.description,
-      //  length: req.body.length
+     email: req.body.email,
+     summoner_name: req.body.summoner_name,
+     first_name: req.body.first_name,
+     last_name: req.body.last_name
    }, {new: true})
        .exec(function(err, user) {
            if (err) { console.log(err); }
-           console.log(users);
-           // res.send(hike);
-           res.render('/users', {
+           console.log(user);
+           res.render('users/show', {
                users: user
            });
        });
@@ -71,6 +67,7 @@ router.post('/', authHelpers.createSecure, function(req, res){
   var user = new User({
     email: req.body.email,
     password_digest: res.hashedPassword,
+    summoner_name: req.body.summoner_name,
     username: req.body.username,
     first_name: req.body.first_name,
     last_name: req.body.last_name
