@@ -1,12 +1,12 @@
-<form action="/users/{{user.id}}?_method=PUT" method="PUT">
+<form action="/users/{{users.id}}?_method=PUT" method="PUT">
 	<div>
 		<label for="first_name">First Name: </label>
-		<input type="text" name="name" value="{{user.first_name}}">
+		<input type="text" name="name" value="{{users.first_name}}">
 	</div>
   <br>
 	<div>
 		<label for="email">Email: </label>
-		<input type="text" name="email" value="{{user.email}}">
+		<input type="text" name="email" value="{{users.email}}">
 	</div>
 	<div>
 		<input type="submit" value="Update Account">
