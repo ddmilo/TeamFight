@@ -1,13 +1,14 @@
-<form action="/users/{{user}}/lists/{{list.id}}?_method=PUT" method="POST">
+<form action="/users/{{user.id}}?_method=PUT" method="POST">
 	<div>
 		<label for="name">Name: </label>
-		<input type="text" name="name" value="{{list.name}}">
+		<input type="text" name="name" value="{{user.name}}">
+	</div>
+  <br>
+	<div>
+		<label for="email">Email: </label>
+		<input type="text" name="email" value="{{user.email}}">
 	</div>
 	<div>
-		<label for="completed">Completed: </label>
-		<input type="text" name="completed" value="{{list.completed}}">
-	</div>
-	<div>
-		<input type="submit" value="Update List">
+		<input type="submit" value="Update Account">
 	</div>
 </form>

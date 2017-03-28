@@ -14,15 +14,39 @@ router.get('/', function(req, res) {
 
 //create a GET "/:id/edit" route that renders the list's edit page
 router.get("/:id/edit", function(req, res) {
-	User.findById(req.params.id)
+	User.findById(req.params._id)
 		.exec(function(err, user) {
 			if (err) { console.log(err); }
 			res.render("users/edit", {
 				users: user,
-				user: req.params.userId
+				user: req.params._id
 			});
 		});
 });
+
+//======================
+// UPDATE
+//======================
+//create a PUT "/:id" route that saves the changes from the list.
+router.put("/:id", function(req, res) {
+	User.findById(req.params._id)
+		.exec(function(err, users) {
+			if (err) { console.log(err); }
+			user.name = req.body.first_name;
+			user.email = req.body.email;
+			user.save();
+		});
+	User.findById(req.params._id)
+		.exec(function(err, users) {
+			if (err) { console.log(err); }
+			var userToEdit = user.list.id(req.params._id);
+			listToEdit.name = req.body.name;
+			listToEdit.completed = req.body.completed;
+			user.save();
+			res.redirect(`/:id`);
+		});
+});
+
 
 //render the register page
 router.get('/register', function(req, res){
