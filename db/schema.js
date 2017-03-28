@@ -14,6 +14,7 @@ mongoose.Promise = global.Promise;
 
 
 var UserSchema = new Schema ({
+  // avatar: URL,
   first_name: String,
   last_name: String,
   summoner_name: String,
