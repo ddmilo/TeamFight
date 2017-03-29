@@ -65,6 +65,30 @@ router.get("/:id", function(req, res) {
     });
 });
 
+// update POST
+router.patch('/:id', function(req, res) {
+   Post.findByIdAndUpdate(req.params.id, {
+     description: req.body.description
+   }, {new: true})
+       .exec(function(err, post) {
+           if (err) { console.log(err); }
+           console.log(post);
+           res.render('posts/show', {
+               posts: post
+           });
+       });
+});
+
+// POST DELETE
+router.delete('/:id', function(req, res){
+  Post.findByIdAndRemove(req.params.id)
+  .exec(function(err, post) {
+    if (err) console.log(err);
+    // console.log('User deleted!');
+    // res.send("User deleted");
+    res.redirect('/posts');
+  });
+});
 
 
 
