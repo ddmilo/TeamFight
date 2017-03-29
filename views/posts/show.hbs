@@ -2,7 +2,7 @@
 <h3> Game: {{ posts.game }} </h3>
 <h4> Party Leader: {{ posts.party_leader}} </h4>
 
-<ul>
+<ul class = "postshow">
 
  <li> Description: {{ posts.description }}</li>
  <li> Date Created: {{ posts.created_at }} </li>
@@ -11,8 +11,8 @@
 </ul>
 
 
-<button class='btn btn-success'>RSVP</button>
-<button><a href="/posts/{{posts.id}}/edit">Edit</a></button>
+<!-- <button class='btn btn-success'>RSVP</button> -->
+<a href="/posts/{{posts.id}}/edit"><button class='btn btn-caution'>Edit</button></a>
 
 <form class="" action="/posts/{{posts.id}}?_method=DELETE" method="post">
   <input type="submit" name="" value="delete">

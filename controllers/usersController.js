@@ -39,10 +39,7 @@ router.get("/:id/edit", function(req, res) {
 			});
 		});
 });
-// ======================
-// UPDATE
-// ======================
-// create a PUT "/:id" route that saves the changes from the list.
+
 // update User
 router.patch('/:id', function(req, res) {
    User.findByIdAndUpdate(req.params.id, {

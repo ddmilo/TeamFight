@@ -1,14 +1,17 @@
-<button><a href="/posts/new">New LFG</a></button>
-<br>
-<br>
-<div class ='lfg'>
+<h2>Party Finder</h2>
 
-<ul>
+<a class = 'new-post' href="/posts/new"><button class='btn btn-success'>New LFG</button></a>
+<br>
+<br>
+<div>
+
+<ul class ='lfg'>
   {{#each posts}}
   <h4>{{this.looking_for}}</h4>
     <a href="/posts/{{this.id}}"><li> Game: {{ this.game }} </li>
+    <li> Party Leader: {{ this.party_leader }}</li>
     <li> Description: {{this.description}} </li>
-    <li> Party Leader: {{ this.party_leader }}</li></a>
+    <li> Created: {{ this.created_at }}</li></a>
     <br>
   {{/each}}
 </ul>
