@@ -64,6 +64,8 @@ input[type=text]{
   margin-bottom: 0.5em;
 }
 
+
+
 input[type=password]{
   border: 0;
   outline: 0;
@@ -72,6 +74,7 @@ input[type=password]{
   width: 350px;
   font-size: 24px;
   margin-bottom: 0.5em;
+  color: white;
 }
 
 .landing input[type=text] {
