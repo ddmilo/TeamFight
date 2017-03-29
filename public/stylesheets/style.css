@@ -4,6 +4,89 @@
   text-align: center;
 }*/
 
+body {
+
+  background-image:  url("http://bestgamewallpapers.com/files/overwatch/overwatch-teamfight_wide.jpg");
+  background-size: cover;
+  /*background-position: fixed;*/
+  background-repeat: no-repeat;
+
+}
+
+.signupform {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.showuser{
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.showuser h1, h3, li {
+  color: white;
+}
+
+.edituser {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.edituser h2 {
+  color: white;
+}
+
+.loginuser {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.loginuser h2 {
+  color: white;
+}
+
+.landinguser {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.postshow {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.postindex {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.postindex h2, h4 {
+  color: white;
+}
+
+.newpost {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.newpost h2{
+  color: white;
+}
+
+h1 {
+  color: white;
+}
+
+
+
+.landing {
+  background-color: rgba(255, 0, 0, 0);
+}
+
+.main-text {
+  margin: 0 auto;
+}
+/*img {
+  height: 100%;
+  widows: 100%;
+}*/
+
+/*.jumbotron {
+  height: 100%;
+  width: 100%;
+}*/
+
 .lfg  {
   border: 1px solid black;
 }
@@ -29,18 +112,16 @@ a {
   color: black;
 }
 
-.landing {
-  background-image: url('/images/TeamFightindex.jpg');
-  background-size: cover;
+.landing-bg {
+  /*background: url("/images/TeamFightindex.jpg") center no-repeat fixed;*/
+  /*background-size: cover;*/
   /*background-size: contain;*/
-  background-repeat: no-repeat;
+  /*background-repeat: no-repeat;*/
+  /*background-position: center;*/
+
   /*position: absolute;*/
 }
 
-form {
-  display: inline;
-  margin: 0 auto;
-}
 
 .landing p {
   color: black;
@@ -58,12 +139,19 @@ input[type=text]{
   border: 0;
   outline: 0;
   background: transparent;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
   width: 350px;
   font-size: 24px;
   margin-bottom: 0.5em;
+  color: white;
+
 }
 
+
+label {
+  color: white;
+
+}
 
 
 input[type=password]{

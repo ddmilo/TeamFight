@@ -1,19 +1,21 @@
-<h1>Party Details</h1>
-<h3> Game: {{ posts.game }} </h3>
-<h4> Party Leader: {{ posts.party_leader}} </h4>
+<div class ='postshow'>
+  <h1>Party Details</h1>
+  <h3> Game: {{ posts.game }} </h3>
+  <h4> Party Leader: {{ posts.party_leader}} </h4>
 
-<ul class = "postshow">
+  <ul class = "postshow">
 
- <li> Description: {{ posts.description }}</li>
- <li> Date Created: {{ posts.created_at }} </li>
-<br>
+   <li> Description: {{ posts.description }}</li>
+   <li> Date Created: {{ posts.created_at }} </li>
+  <br>
 
-</ul>
+  </ul>
 
 
-<!-- <button class='btn btn-success'>RSVP</button> -->
-<a href="/posts/{{posts.id}}/edit"><button class='btn btn-caution'>Edit</button></a>
+  <!-- <button class='btn btn-success'>RSVP</button> -->
+  <a href="/posts/{{posts.id}}/edit"><button class='btn btn-caution'>Edit</button></a>
 
-<form class="" action="/posts/{{posts.id}}?_method=DELETE" method="post">
-  <input type="submit" name="" value="delete">
-</form>
+  <form class="" action="/posts/{{posts.id}}?_method=DELETE" method="post">
+    <input type="submit" name="" value="delete">
+  </form>
+</div>
