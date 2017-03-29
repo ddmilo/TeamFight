@@ -1,10 +1,15 @@
 <button><a href="/posts/new">New LFG</a></button>
+<br>
+<br>
+<div class ='lfg'>
 
 <ul>
   {{#each posts}}
+  <h4>{{this.looking_for}}</h4>
     <a href="/posts/{{this.id}}"><li> Game: {{ this.game }} </li>
     <li> Description: {{this.description}} </li>
     <li> Party Leader: {{ this.party_leader }}</li></a>
     <br>
   {{/each}}
 </ul>
+</div>

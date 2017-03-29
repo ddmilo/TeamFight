@@ -5,6 +5,7 @@ mongoose.Promise = global.Promise;
 
 
 var PostSchema = new Schema ({
+  looking_for: String,
   created_at: Date,
   game: String,
   updated_at: Date,

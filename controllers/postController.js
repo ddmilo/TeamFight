@@ -15,6 +15,7 @@ router.get('/', function(req, res){
     })
 })
 
+//Create post
 router.get('/new', function(req, res){
   User.findById(req.params.id)
     .exec (function(err, user){
@@ -23,12 +24,9 @@ router.get('/new', function(req, res){
     })
 })
 
-//======================
-// CREATE
-//======================
-//create a POST "/" route that saves the list item to the logged in user
 router.post("/", function(req, res) {
 	var newPost = new Post({
+    looking_for: req.body.looking_for,
     game: req.body.game,
     description: req.body.description,
     party_leader: req.body.party_leader
@@ -41,6 +39,9 @@ router.post("/", function(req, res) {
     res.redirect('/posts');
   });
 });
+
+//create comment
+
 
 //Edit post
 router.get("/:id/edit", function(req, res) {
