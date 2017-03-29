@@ -1,8 +1,54 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  text-align: center;
 }
 
 a {
   color: #00B7FF;
+}
+
+.navbar li{
+  display: inline;
+}
+
+.landing {
+  background-image: url('/images/TeamFightindex.jpg');
+  background-size: cover;
+}
+
+form {
+  display: inline;
+  margin: 0 auto;
+}
+
+.landing form {
+  color: white;
+}
+
+input[type=text]{
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid black;
+  width: 350px;
+  font-size: 24px;
+  margin-bottom: 0.5em;
+}
+
+.landing input[type=text] {
+  color: white;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  border-bottom: 2px solid white;
+  width: 350px;
+  font-size: 24px;
+  margin-bottom: 0.5em;
+
+}
+
+input[type="password" i]{
+  text-security: disc;
+  -webkit-text-security: disc;
 }
