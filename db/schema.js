@@ -9,7 +9,8 @@ var PostSchema = new Schema ({
   game: String,
   updated_at: Date,
   description: String,
-  full: Boolean
+  full: Boolean,
+  party_leader: String
 })
 
 

@@ -1,3 +1,10 @@
-<p>TEST!</p>
+<button><a href="/posts/new">New LFG</a></button>
 
-<a href="/posts/new">New LFG</a>
+<ul>
+  {{#each posts}}
+    <a href="/posts/{{ posts.id }}/show"><li> Game: {{ this.game }} </li>
+    <li> Description: {{this.description}} </li>
+    <li> Party Leader: {{ this.party_leader }}</li></a>
+    <br>
+  {{/each}}
+</ul>
