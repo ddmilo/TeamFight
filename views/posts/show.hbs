@@ -5,13 +5,12 @@
 <ul>
 
  <li> Description: {{ posts.description }}</li>
- <li> Email: {{ users.email }} </li>
- <li> Summoner Name: {{ users.summoner_name}} </li>
+ <li> Date Created: {{ posts.created_at }} </li>
 <br>
 
 </ul>
 
-<button><a href="/users/{{users.id}}/edit">Edit</a></button>
+<button><a href="/posts/{{posts.id}}/edit">Edit</a></button>
 
 <form class="" action="/users/{{users.id}}?_method=DELETE" method="post">
   <input type="submit" name="" value="delete">

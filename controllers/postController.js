@@ -42,6 +42,18 @@ router.post("/", function(req, res) {
   });
 });
 
+//Edit post
+router.get("/:id/edit", function(req, res) {
+	Post.findById(req.params.id)
+		.exec(function(err, post) {
+			if (err) { console.log(err); }
+			res.render("posts/edit", {
+				posts: post
+
+			});
+		});
+});
+
 //Post Show route
 router.get("/:id", function(req, res) {
   Post.findById(req.params.id)
