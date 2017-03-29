@@ -63,7 +63,7 @@ router.delete('/:id', function(req, res){
   .exec(function(err, user) {
     if (err) console.log(err);
     console.log('User deleted!');
-    res.send("User deleted");
+    // res.send("User deleted");
     res.redirect('/');
   });
 });
