@@ -1,8 +1,10 @@
 <h1>Party Details</h1>
 <h3> Game: {{ posts.game }} </h3>
-<!-- <ul>
+<h4> Party Leader: {{ posts.party_leader}} </h4>
 
- <li> Name: {{ users.first_name }} {{users.last_name}}</li>
+<ul>
+
+ <li> Description: {{ posts.description }}</li>
  <li> Email: {{ users.email }} </li>
  <li> Summoner Name: {{ users.summoner_name}} </li>
 <br>
@@ -13,4 +15,4 @@
 
 <form class="" action="/users/{{users.id}}?_method=DELETE" method="post">
   <input type="submit" name="" value="delete">
-</form> -->
+</form>

@@ -15,17 +15,6 @@ router.get('/', function(req, res){
     })
 })
 
-//User Show route
-router.get("/:id", function(req, res) {
-  Post.findById(req.params.id)
-    .exec(function(err, post) {
-      if (err) { console.log(err); }
-      res.render("posts/show", {
-        posts: post
-      });
-    });
-});
-
 router.get('/new', function(req, res){
   User.findById(req.params.id)
     .exec (function(err, user){
@@ -52,6 +41,20 @@ router.post("/", function(req, res) {
     res.redirect('/posts');
   });
 });
+
+//Post Show route
+router.get("/:id", function(req, res) {
+  Post.findById(req.params.id)
+    .exec(function(err, post) {
+      if (err) { console.log(err); }
+      res.render("posts/show", {
+        posts: post
+      });
+    });
+});
+
+
+
 
 
 

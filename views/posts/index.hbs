@@ -2,7 +2,7 @@
 
 <ul>
   {{#each posts}}
-    <a href="/posts/{{ posts.id }}/show"><li> Game: {{ this.game }} </li>
+    <a href="/posts/{{this.id}}"><li> Game: {{ this.game }} </li>
     <li> Description: {{this.description}} </li>
     <li> Party Leader: {{ this.party_leader }}</li></a>
     <br>
