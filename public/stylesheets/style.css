@@ -1,16 +1,14 @@
-body {
+/*body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   text-align: center;
-}
+}*/
 
 a {
   color: #00B7FF;
 }
 
-.navbar li{
-  display: inline;
-}
+
 
 .landing {
   background-image: url('/images/TeamFightindex.jpg');
@@ -63,4 +61,23 @@ input[type="password" i]{
 
 .lfg ul{
   list-style: none;
+}
+
+footer {
+	clear: both;
+	color: white;
+}
+
+.footer {
+	background-color: #292b2c;
+/*	position: fixed;
+*/	bottom: 0;
+	width: 100%;
+	height: 65px;
+
+}
+
+.footer a {
+	text-decoration: none;
+	color: inherit;
 }
