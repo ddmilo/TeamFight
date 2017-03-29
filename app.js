@@ -18,8 +18,8 @@ var postController = require('./controllers/postController');
 var app = express();
 
 var db = mongoose.connection;
-// mongoose.connect(process.env.MONGODB_URI);
-mongoose.connect('mongodb://localhost/TeamFight');
+mongoose.connect(process.env.MONGODB_URI);
+// mongoose.connect('mongodb://localhost/TeamFight');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
