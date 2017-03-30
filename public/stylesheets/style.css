@@ -186,7 +186,7 @@ input[type="password" i]{
   list-style: none;
 }
 
-footer {
+.footer {
 	clear: both;
 	color: white;
 }

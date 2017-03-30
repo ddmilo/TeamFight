@@ -13,9 +13,10 @@
 
 
   <!-- <button class='btn btn-success'>RSVP</button> -->
-  <a href="/posts/{{posts.id}}/edit"><button class='btn btn-caution'>Edit</button></a>
-
+  <a href="/posts/{{posts.id}}/edit"><button class='btn btn-warning'>Edit</button></a>
+<br>
+<br>
   <form class="" action="/posts/{{posts.id}}?_method=DELETE" method="post">
-    <input type="submit" name="" value="delete">
+    <button class='btn btn-danger' type="submit" name="" value="delete">Delete</button>
   </form>
 </div>
