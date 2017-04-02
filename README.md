@@ -28,4 +28,4 @@ TeamFight is an application for users looking to group up with others in order t
 * User is able to create posts
 
 ## Wireframe
- ![Wireframe] ()
+ ![Wireframe] (https://github.com/ddmilo/TeamFight/blob/master/public/images/Wireframe.jpg?raw=true)
